@@ -25,7 +25,7 @@ public class MovieAspect {
         this.sender = sender;
     }
 
-    @After("execution(* com.example.demo.MovieController.getAll(..))")
+    @After("execution(* com.example.demo.MovieController.*(..))")
     private void sendEmail() {
         System.out.println("aspect");
         HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder
